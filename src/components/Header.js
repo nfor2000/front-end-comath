@@ -46,12 +46,7 @@ const Header = ({ token }) => {
       search.classList.remove('active');
     };
 
-    document.querySelectorAll('.link').forEach(link => {
-     link.addEventListener('click', ()=> {
-          sideBar.classList.remove('active');
-          body.classList.remove('active');
-     })
-    })
+   
     document.querySelector('#search-btn').onclick = () => {
       search.classList.toggle('active');
       profile.classList.remove('active');
@@ -69,6 +64,13 @@ const Header = ({ token }) => {
       body.classList.remove('active');
     };
 
+    document.querySelectorAll('.link').forEach(link => {
+     link.addEventListener('click', ()=> {
+          sideBar.classList.remove('active');
+          body.classList.remove('active');
+     })
+    })
+    
     window.onscroll = () => {
       profile.classList.remove('active');
       search.classList.remove('active');

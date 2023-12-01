@@ -19,7 +19,7 @@ const SideNav = ({ token }) => {
                               <img src={user.profileImg} alt="" />
                               <h3>{user.name}</h3>
                               <span>student</span>
-                              <Link to={`/user_profile`} className="btn">
+                              <Link className='link btn' to={`/user_profile`}>
                                    view profile
                               </Link>
                          </>
@@ -28,7 +28,7 @@ const SideNav = ({ token }) => {
                               <img src={teacher.profileImg} alt="" />
                               <h3>{teacher.name}</h3>
                               <span>Teacher</span>
-                              <Link to={`/dash_profile/${teacher?._id}`} className="btn">
+                              <Link className='link btn' to={`/dash_profile/${teacher?._id}`} >
                                    view profile
                               </Link>
                          </>
@@ -36,8 +36,8 @@ const SideNav = ({ token }) => {
                          <>
                               <h3>please login or register</h3>
                               <div className="flex-btn">
-                                   <Link to="/user_login" className="option-btn">login</Link>
-                                   <Link to="/user_signup" className="option-btn">register</Link>
+                                   <Link className='link option-btn' to="/user_login" >login</Link>
+                                   <Link className='link option-btn' to="/user_signup" >register</Link>
                               </div>
                          </>
                     )}
@@ -45,53 +45,53 @@ const SideNav = ({ token }) => {
                <nav className="navbar">
                     {token && user ? (
                          <>
-                              <Link to="/">
-                                   <i className="fa fa-home link"></i>
+                              <Link className='link' to="/">
+                                   <i className="fa fa-home"></i>
                                    <span>Home</span>
                               </Link>
-                              <Link to="/about">
-                                   <i className="fa fa-question link"></i>
+                              <Link className='link' to="/about">
+                                   <i className="fa fa-question"></i>
                                    <span>About</span>
                               </Link>
-                              <Link to="/courses">
-                                   <i className="fa fa-graduation-cap link"></i>
+                              <Link className='link' to="/courses">
+                                   <i className="fa fa-graduation-cap"></i>
                                    <span>Courses</span>
                               </Link>
-                              <Link to="/teachers">
-                                   <i className="fa fa-users link"></i>
+                              <Link className='link' to="/teachers">
+                                   <i className="fa fa-users"></i>
                                    <span>Teachers</span>
                               </Link>
-                              <Link to="/contact">
-                                   <i className="fa fa-headphones link"></i>
+                              <Link className='link' to="/contact">
+                                   <i className="fa fa-headphones"></i>
                                    <span>Contact</span>
                               </Link>
                          </>
                     ) : token && teacher ? (
                          <>
-                              <Link to='/dashboard'><i className="fas fa-home link"></i><span>home</span></Link>
-                              <Link to="/content"><i className="fas fa-graduation-cap link"></i><span>contents</span></Link>
-                              <Link to='/404'><i className="fas fa-comment link"></i><span>comments</span></Link>
+                              <Link className='link' to='/dashboard'><i className="fas fa-home"></i><span>home</span></Link>
+                              <Link className='link' to="/content"><i className="fas fa-graduation-cap"></i><span>contents</span></Link>
+                              <Link className='link' to='/404'><i className="fas fa-comment"></i><span>comments</span></Link>
                               <TeacherLogout />
                          </>
                     ): (
                          <>
-                              <Link to="/">
+                              <Link className='link' to="/">
                                    <i className="fa fa-home"></i>
                                    <span>Home</span>
                               </Link>
-                              <Link to="/about">
+                              <Link className='link' to="/about">
                                    <i className="fa fa-question"></i>
                                    <span>About</span>
                               </Link>
-                              <Link to="/courses">
+                              <Link className='link' to="/courses">
                                    <i className="fa fa-graduation-cap"></i>
                                    <span>Courses</span>
                               </Link>
-                              <Link to="/teachers">
+                              <Link className='link' to="/teachers">
                                    <i className="fa fa-users"></i>
                                    <span>Teachers</span>
                               </Link>
-                              <Link to="/contact">
+                              <Link className='link' to="/contact">
                                    <i className="fa fa-headphones"></i>
                                    <span>Contact</span>
                               </Link>

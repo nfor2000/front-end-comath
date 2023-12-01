@@ -46,31 +46,31 @@ const SideNav = ({ token }) => {
                     {token && user ? (
                          <>
                               <Link to="/">
-                                   <i className="fa fa-home"></i>
+                                   <i className="fa fa-home link"></i>
                                    <span>Home</span>
                               </Link>
                               <Link to="/about">
-                                   <i className="fa fa-question"></i>
+                                   <i className="fa fa-question link"></i>
                                    <span>About</span>
                               </Link>
                               <Link to="/courses">
-                                   <i className="fa fa-graduation-cap"></i>
+                                   <i className="fa fa-graduation-cap link"></i>
                                    <span>Courses</span>
                               </Link>
                               <Link to="/teachers">
-                                   <i className="fa fa-users"></i>
+                                   <i className="fa fa-users link"></i>
                                    <span>Teachers</span>
                               </Link>
                               <Link to="/contact">
-                                   <i className="fa fa-headphones"></i>
+                                   <i className="fa fa-headphones link"></i>
                                    <span>Contact</span>
                               </Link>
                          </>
                     ) : token && teacher ? (
                          <>
-                              <Link to='/dashboard'><i className="fas fa-home"></i><span>home</span></Link>
-                              <Link to="/content"><i className="fas fa-graduation-cap"></i><span>contents</span></Link>
-                              <Link to='/404'><i className="fas fa-comment"></i><span>comments</span></Link>
+                              <Link to='/dashboard'><i className="fas fa-home link"></i><span>home</span></Link>
+                              <Link to="/content"><i className="fas fa-graduation-cap link"></i><span>contents</span></Link>
+                              <Link to='/404'><i className="fas fa-comment link"></i><span>comments</span></Link>
                               <TeacherLogout />
                          </>
                     ): (

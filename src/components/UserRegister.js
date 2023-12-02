@@ -29,7 +29,7 @@ const UserRegister = () => {
           try {
                await axios({
                     method: 'post',
-                    url: "http://ec2-16-171-60-144.eu-north-1.compute.amazonaws.com:6666/user/register",
+                    url: "http://ec2-16-171-60-144.eu-north-1.compute.amazonaws.com:4000/user/register",
                     data: userData,
                     headers: {
                          "Content-Type": "multipart/form-data"

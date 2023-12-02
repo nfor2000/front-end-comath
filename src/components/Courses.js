@@ -10,7 +10,7 @@ const Box = ({ course }) => {
 
           const fetchTeacher = async () => {
                try {
-                    const response = await axios.get(`http://localhost:6666/teacher/profile/${id}`)
+                    const response = await axios.get(`http://ec2-16-171-60-144.eu-north-1.compute.amazonaws.com:8888/teacher/profile/${id}`)
                     setTeacher(response.data)
                } catch (error) {
                     console.log(error)
@@ -50,7 +50,7 @@ const Courses = () => {
                try {
                     const response = await axios({
                          method: 'get',
-                         url: 'http://localhost:6666/content/allcontent',
+                         url: 'http://ec2-16-171-60-144.eu-north-1.compute.amazonaws.com:8888/content/allcontent',
                     })
                     setOurCourses(response.data)
                } catch (error) {

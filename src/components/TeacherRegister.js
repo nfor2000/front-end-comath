@@ -33,7 +33,7 @@ const TeacherRegister = () => {
           try {
                const res = await axios({
                     method: 'post',
-                    url: "http://localhost:6666/teacher/register",
+                    url: "http://ec2-16-171-60-144.eu-north-1.compute.amazonaws.com:8888/teacher/register",
                     data: userData,
                     headers: {
                          "Content-Type": "multipart/form-data"

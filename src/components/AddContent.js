@@ -42,7 +42,7 @@ const AddContent = ({token}) => {
                formData.append('thumb', thumbFile);
                formData.append('video', videoFile);
 
-               const response = await axios.post('http://localhost:6666/content/create', formData, {
+               const response = await axios.post('http://ec2-16-171-60-144.eu-north-1.compute.amazonaws.com:8888/content/create', formData, {
                     headers: {
                          'Content-Type': 'multipart/form-data',
                          'Authorization': 'Bearer '+ token,

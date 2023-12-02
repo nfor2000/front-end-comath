@@ -11,7 +11,7 @@ const TeacherProfile = () => {
 
           const fetchTeacher = async () => {
                try {
-                    const response = await axios.get(`http://localhost:4444/teacher/profile/${id}`)
+                    const response = await axios.get(`http://ec2-16-171-60-144.eu-north-1.compute.amazonaws.com:4444/teacher/profile/${id}`)
                     setTeacher(response.data)
                } catch (error) {
                     console.log(error)
@@ -21,7 +21,7 @@ const TeacherProfile = () => {
           
           const fetchContent = async () => {
                try {
-                    const response = await axios.get(`http://localhost:4444/content/teacherContent/${id}`)
+                    const response = await axios.get(`http://ec2-16-171-60-144.eu-north-1.compute.amazonaws.com:4444/content/teacherContent/${id}`)
                     setContent(response.data)
                } catch (error) {
                     console.log(error)

@@ -11,12 +11,12 @@ const PreviewVideo = () => {
           
           const fetchData = async () => {
                try {
-                 const contentRes = await axios.get(`http://localhost:4444/content/video/${id}`);
+                 const contentRes = await axios.get(`http://ec2-16-171-60-144.eu-north-1.compute.amazonaws.com:4444/content/video/${id}`);
                  console.log(contentRes.data[0]);
                  setContent(contentRes.data[0]);
              
                  const teacherId = contentRes.data[0].teacher;
-                 const teacherRes = await axios.get(`http://localhost:4444/teacher/profile/${teacherId}`);
+                 const teacherRes = await axios.get(`http://ec2-16-171-60-144.eu-north-1.compute.amazonaws.com:4444/teacher/profile/${teacherId}`);
                  console.log(teacherId, teacherRes.data);
                  setTeacher(teacherRes.data);
                } catch (error) {

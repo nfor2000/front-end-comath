@@ -11,7 +11,7 @@ const Teachers = () => {
                try {
                     const response = await axios({
                          method: 'get',
-                         url:'http://ec2-16-171-60-144.eu-north-1.compute.amazonaws.com:4000/teacher/allteachers',
+                         url:'http://ec2-16-171-60-144.eu-north-1.compute.amazonaws.com:4444/teacher/allteachers',
                     })
                     setTeachers(response.data)
                } catch (error) {

@@ -8,7 +8,7 @@ const FetchTeacher = (token) => {
                try {
                     const res = await axios({
                          method: 'get',
-                         url: 'http://ec2-16-171-60-144.eu-north-1.compute.amazonaws.com:4444/teacher/',
+                         url: 'https://ec2-16-171-60-144.eu-north-1.compute.amazonaws.com:443/teacher/',
                          headers: {
                               Authorization: `Bearer ${token}`,
                          },

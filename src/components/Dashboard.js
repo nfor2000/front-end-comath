@@ -11,7 +11,7 @@ const Dashboard = ({ token }) => {
           const fetchCourses = async () => {
 
                try {
-                    const response = await axios.get("http://ec2-16-171-60-144.eu-north-1.compute.amazonaws.com:4444/content/mycontent", {
+                    const response = await axios.get("https://ec2-16-171-60-144.eu-north-1.compute.amazonaws.com:443/content/mycontent", {
                          headers: {
                               Authorization: 'Bearer ' + token,
                          }

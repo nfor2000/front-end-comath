@@ -11,7 +11,7 @@ const TeacherProfile = () => {
 
           const fetchTeacher = async () => {
                try {
-                    const response = await axios.get(`http://localhost:6666/teacher/profile/${id}`)
+                    const response = await axios.get(`http://localhost:8888/teacher/profile/${id}`)
                     setTeacher(response.data)
                } catch (error) {
                     console.log(error)
@@ -21,7 +21,7 @@ const TeacherProfile = () => {
           
           const fetchContent = async () => {
                try {
-                    const response = await axios.get(`http://localhost:6666/content/teacherContent/${id}`)
+                    const response = await axios.get(`http://localhost:8888/content/teacherContent/${id}`)
                     setContent(response.data)
                } catch (error) {
                     console.log(error)

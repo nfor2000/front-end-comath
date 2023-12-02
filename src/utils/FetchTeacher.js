@@ -8,7 +8,7 @@ const FetchTeacher = (token) => {
                try {
                     const res = await axios({
                          method: 'get',
-                         url: 'http://localhost:6666/teacher/',
+                         url: 'http://localhost:8888/teacher/',
                          headers: {
                               Authorization: `Bearer ${token}`,
                          },

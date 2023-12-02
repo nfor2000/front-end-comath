@@ -25,7 +25,6 @@ import TeacherUpdate from './components/TeacherUpdate';
 
 const cookies = new Cookies();
 const token = cookies.get("TOKEN");
-console.log(token)
 function App() {
      return (
           <>

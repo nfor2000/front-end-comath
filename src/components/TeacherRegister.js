@@ -12,6 +12,7 @@ const TeacherRegister = () => {
      const [password, setPassword] = useState("");
      const [confirmPassword, setConfirmPassword] = useState("");
      const [image, setImage] = useState('');
+     const [cv, setCV] = useState('');
 
      const handleSubmit = async (e) => {
           e.preventDefault();
@@ -28,6 +29,7 @@ const TeacherRegister = () => {
           }
           userData.append('proffession', profession)
           userData.append('profileImg', image);
+          userData.append('cv', cv);
           console.log(userData);
 
           try {
@@ -46,6 +48,7 @@ const TeacherRegister = () => {
                setProffession('')
                setConfirmPassword('')
                setImage('')
+               setCV('')
                location('/teacher_login');
                console.log(res);
 
@@ -83,6 +86,8 @@ const TeacherRegister = () => {
                               <input type="password" value={confirmPassword} placeholder="confirm your password" maxLength="20" required className="box" onChange={(e) => setConfirmPassword(e.target.value)} />
                               <p>select pic <span>*</span></p>
                               <input type="file" name="image" accept="image/*" required className="box" onChange={(e) => setImage(e.target.files[0])} />
+                              <p>Submit a CV <span>*</span></p>
+                              <input type="file" name="cv" accept="application/pdf" required className="box" onChange={(e) => setCV(e.target.files[0])} />
                          </div>
                     </div>
                     <p className="link">already have an account? <Link to="/teacher_login">login now</Link></p>

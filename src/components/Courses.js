@@ -10,7 +10,12 @@ const Box = ({ course }) => {
 
           const fetchTeacher = async () => {
                try {
-                    const response = await axios.get(`http://ec2-16-171-60-144.eu-north-1.compute.amazonaws.com:4444/teacher/profile/${id}`)
+                    const response = await axios.get(`/teacher/profile/${id}`,{
+                         headers: {
+                              'Content-Type': 'application/json'
+                         },
+                        
+                    })
                     setTeacher(response.data)
                } catch (error) {
                     console.log(error)
@@ -50,7 +55,7 @@ const Courses = () => {
                try {
                     const response = await axios({
                          method: 'get',
-                         url: 'http://ec2-16-171-60-144.eu-north-1.compute.amazonaws.com:4444/content/allcontent',
+                         url: '/content/allcontent',
                     })
                     setOurCourses(response.data)
                } catch (error) {

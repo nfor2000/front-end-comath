@@ -8,10 +8,11 @@ const FetchUserData = (token) => {
                try {
                     const res = await axios({
                          method: 'get',
-                         url: 'http://ec2-16-171-60-144.eu-north-1.compute.amazonaws.com:4444/user/',
+                         url: '/user/',
                          headers: {
                               Authorization: `Bearer ${token}`,
                          },
+                        
                     });
                     console.log(res.data)
                    setData(res.data);

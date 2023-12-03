@@ -12,7 +12,8 @@ const Home = () => {
                try {
                     const response = await axios({
                          method: 'get',
-                         url:'http://ec2-16-171-60-144.eu-north-1.compute.amazonaws.com:4444/content/allcontent',
+                         url:'/content/allcontent',
+                        
                     })
                     setOurCourses(response.data)
                } catch (error) {

@@ -16,7 +16,7 @@ const UpdateUser = ({token}) => {
      useEffect(() => {
           const fetchUser = async () => {
                try {
-                    const response = await axios.get(`http://ec2-16-171-60-144.eu-north-1.compute.amazonaws.com:4444/user/me/${id}`)
+                    const response = await axios.get(`/user/me/${id}`)
                     const user = response.data
                     setName(user.name)
                     setEmail(user.email)
@@ -41,7 +41,7 @@ const UpdateUser = ({token}) => {
           formData.append('profileImg', profilePic);
 
           try {
-               await axios.post('http://ec2-16-171-60-144.eu-north-1.compute.amazonaws.com:4444/user/update/', formData, {
+               await axios.post('/user/update/', formData, {
                     headers: {
                          Authorization: 'Bearer '+ token,
                          'Content-Type': 'multipart/form-data'

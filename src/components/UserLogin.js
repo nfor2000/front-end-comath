@@ -21,11 +21,12 @@ const UserLogin = () => {
           try {
                const response = await axios({
                     method: 'post',
-                    url: 'http://ec2-16-171-60-144.eu-north-1.compute.amazonaws.com:4444/user/login',
+                    url: '/user/login',
                     data: UserLogin,
                     headers: {
                          'Content-Type': 'application/json'
-                    }
+                    },
+                   
                });
 
                setMessage(response.data.message)

@@ -1,6 +1,35 @@
-import React from "react";
+import React, { useState } from 'react';
+import axios from 'axios';
+
 
 const Contact = () => {
+     const [emailData, setEmailData] = useState({
+          name: '',
+          email: '',
+          message: '',
+        });
+      
+        const handleChange = (e) => {
+          setEmailData({ ...emailData, [e.target.name]: e.target.value });
+        };
+      
+        const handleSubmit = async (e) => {
+          e.preventDefault();
+      
+          await axios.post('/contact/send-email', emailData)
+            .then((response) => {
+              console.log(response.data);
+              // Handle the response as needed
+            })
+            .catch((error) => {
+              console.error(error);
+              // Handle the error as needed
+            });
+          setEmailData({
+                         name: '',
+                         email: '',
+                         message: '',      })
+        };
      return (
           <section className="contact">
 
@@ -10,12 +39,11 @@ const Contact = () => {
                          <img src="images/contact-img.svg" alt="" />
                     </div>
 
-                    <form action="" method="post">
+                    <form onSubmit={handleSubmit}>
                          <h3>get in touch</h3>
-                         <input type="text" placeholder="enter your name" name="name" required maxLength="50" className="box" />
-                         <input type="email" placeholder="enter your email" name="email" required maxLength="50" className="box" />
-                         <input type="number" placeholder="enter your number" name="number" required maxLength="50" className="box" />
-                         <textarea name="msg" className="box" placeholder="enter your message" required maxLength="1000" cols="30" rows="10"></textarea>
+                         <input type="text" placeholder="enter your name" name="name" required maxLength="50" className="box" value={emailData.name} onChange={handleChange} />
+                         <input type="email" placeholder="enter your email" name="email" required maxLength="50" className="box" value={emailData.email} onChange={handleChange} />
+                         <textarea name="message" className="box" placeholder="enter your message" required maxLength="1000" cols="30" rows="10" value={emailData.message} onChange={handleChange} ></textarea>
                          <input type="submit" value="send message" className="inline-btn" name="submit" />
                     </form>
 
@@ -50,3 +78,5 @@ const Contact = () => {
 }
 
 export default Contact;
+
+
